@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import Logo from './Logo'
 import Navbar from './Navbar'
 import Social from './Social'
