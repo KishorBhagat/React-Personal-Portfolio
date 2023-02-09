@@ -27,25 +27,25 @@ const StyledHeader = styled.header`
             position: relative;
             z-index: 1000;
             cursor: pointer;
-            svg{
+            /* svg{
                 height: fit-content;
-            }
-            /* .bi-x{
+            } */
+            .bi-x{
                 animation-name: rotate;
                 animation-duration: 0.3s;
             }
             @keyframes rotate {
                 from {transform: rotate(0deg);}
                 to {transform: rotate(180deg);}
-            } */
+            }
         }
 
-        @media (width < 700px){
+        @media (max-width: 700px){
             display: block;
         }
     }
 
-    @media (width < 700px){
+    @media (max-width: 700px){
         padding: 0px 25px;
     }
 `;
@@ -60,7 +60,7 @@ const Div = styled.div`
         transform: translateY(0px);
         background-color: rgba(10, 25, 47, 0.85);
         box-shadow: 0 10px 30px -10px var(--navy-shadow);
-        backdrop-filter: blur(8px);
+        backdrop-filter: blur(10px);
     }
 `;
 
@@ -94,6 +94,7 @@ const Header = () => {
         setNavVisibility(!navVisibility);
         if(!navVisibility){
             document.body.style.overflow = "hidden";
+            
         }
         else{
             document.body.style.overflow = "visible";
@@ -107,7 +108,11 @@ const Header = () => {
             <Navbar/> 
             <Social />
             <div className='responsiveMenu' onClick={showNavbar}>
-                <div className="menuIcon">{ !navVisibility ? <IconHamburgerMenu/> : <IconClose /> }</div>                  
+                <div className="menuIcon">{ !navVisibility ? <IconHamburgerMenu/> : <IconClose navVisibility={navVisibility}/> }</div>                  
+                {/* <div className="menuIcon">
+                    <IconHamburgerMenu navVisibility={navVisibility}/>
+                    <IconClose navVisibility={navVisibility}/>
+                </div>                   */}
                 <NavbarResponsive  navVisibility={navVisibility}/>
             </div>
         </StyledHeader>

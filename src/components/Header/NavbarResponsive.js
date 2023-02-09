@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-scroll';
 import styled from 'styled-components';
 
 const StyledWrapper = styled.nav`
@@ -30,7 +31,8 @@ const StyledWrapper = styled.nav`
                 transition: all 0.1s;
                 font-family: var(--font-mono);
                 font-size: 20px;
-
+                cursor: pointer;
+                
                  &:hover {
                     color: var(--green);
                 }
@@ -40,9 +42,12 @@ const StyledWrapper = styled.nav`
                     font-family: "Consolas";
                 }
             }
+            .active{
+                color: var(--green);
+            }
         }
     }
-    @media (width>700px){
+    @media (min-width: 700px){
         display: none;
     }
 `;
@@ -62,11 +67,11 @@ const NavbarResponsive = (props) => {
         <Div>
             <StyledWrapper className={`menu ${props.navVisibility ? "showNavbar" : ""}`}>
                 <ul>
-                    <li><a href="#home"><span></span>Home</a></li>
-                    <li><a href="#about"><span></span>About</a></li>
-                    <li><a href="#skills"><span></span>Skills</a></li>
-                    <li><a href="#projects"><span></span>Projects</a></li>
-                    <li><a href="#contact"><span></span>Contact</a></li>
+                    <li><Link activeClass='active' spy to="home"><span></span>Home</Link></li>
+                    <li><Link activeClass='active' spy to="about"><span></span>About</Link></li>
+                    <li><Link activeClass='active' spy to="skills"><span></span>Skills</Link></li>
+                    <li><Link activeClass='active' spy to="projects"><span></span>Projects</Link></li>
+                    <li><Link activeClass='active' spy to="contact"><span></span>Contact</Link></li>
                 </ul>
             </StyledWrapper>
         </Div>

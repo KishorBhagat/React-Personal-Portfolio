@@ -21,8 +21,6 @@ const StyledEmail = styled.ul`
         transition: 0.3s all;
         font-size: 14px;
         font-family: var(--font-mono);
-        /* font-weight: 300; */
-        /* letter-spacing: 0.2ch; */
         letter-spacing: 1.3px;
         &:hover{
             transform: translateY(-5px);
@@ -36,7 +34,7 @@ const StyledEmail = styled.ul`
         margin-bottom: 0;
         background-color: var(--slate);
     }
-    @media (width < 700px){
+    @media (max-width: 700px){
         display: none;
     }
 `;

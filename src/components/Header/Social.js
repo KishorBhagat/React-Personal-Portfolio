@@ -27,20 +27,20 @@ const StyledSocialLinks = styled.ul`
             transform: scale(1.2);
         }
     }
-    @media (width < 700px){
+    @media (max-width: 700px){
         display: none;
     }
 `;
 
 const Social = () => {
   return (
-    // <>
+    <>
         <StyledSocialLinks className='social'>
             <li><a href="https://github.com/KishorBhagat" rel="noreferrer" target="_blank" title='Github'><IconGitHub /></a></li>
             <li><a href="https://www.linkedin.com/in/kishor-bhagat-10b3aa22b" rel="noreferrer" target="_blank" title='LinkedIn'><IconLinkedin /></a></li>
             <li><a href="https://www.facebook.com/kishore.bhagat.923" rel="noreferrer" target="_blank" title='Facebook'><IconFacebook /></a></li>
         </StyledSocialLinks>
-    // </>
+    </>
   )
 }
 

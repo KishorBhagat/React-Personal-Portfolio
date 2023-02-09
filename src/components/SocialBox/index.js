@@ -39,7 +39,7 @@ const StyledSocialLinks = styled.ul`
         margin-bottom: 0;
         background-color: var(--slate);
     }
-    @media (width < 700px){
+    @media (max-width: 700px){
         display: none;
     }
 `;

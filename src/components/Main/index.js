@@ -9,12 +9,11 @@ import Skills from '../../pages/Skills/index.js'
 
 const StyledMain = styled.main`
     padding: 0 150px;
-    color: var(--slate);
     
-    @media (400px <= width < 700px){
+    @media (min-width: 400px) and (max-width: 700px){
       padding: 0 50px;
     }
-    @media (width < 400px){
+    @media (max-width: 400px){
       padding: 0 25px;
     }
 `;

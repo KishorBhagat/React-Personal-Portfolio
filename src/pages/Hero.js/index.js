@@ -2,8 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import Button from '../../components/Button';
 
-const Me = require('../../images/me.jpg');
-const MyResume = require('../../static/SampleResume.pdf')
 
 const StyledHero = styled.section`
   
@@ -44,6 +42,7 @@ const StyledHero = styled.section`
       font-weight: 600;
       span{
         color: var(--blue);
+        /* color: #3aafc9; */
       }
     }
     p{
@@ -62,7 +61,7 @@ const StyledHero = styled.section`
     }
   } 
 
-  @media (width < 700px){
+  @media (max-width: 700px){
     flex-direction: column-reverse;
     /* align-items: center; */
     justify-content: center;
@@ -76,7 +75,6 @@ const StyledHero = styled.section`
       h3{
         font-size: 28px;
         line-height: 1.2em;
-
       }
       p{
         width: 100%;
@@ -93,10 +91,10 @@ const StyledHero = styled.section`
       }
     }
   }
-  @media (width < 400px){
+  @media (max-width: 400px){
     .profileImg {
       img{
-        height: 280px;
+        height: 260px;
       }
     }
   }
@@ -110,10 +108,10 @@ const Hero = () => {
           <h3 className='heading'>A Student and</h3>
           <h3>a <span>Full Stack</span> Web Developer.</h3>
           <p>Zelous about software engineering having a handful of knowledge on web development. Primarily, looking for internships to upskill my existing skill set and gain some industrial work experience.</p>
-          <div><Button value="View Resume" file={MyResume}/></div>
+          <div><Button value="View Resume" link={'/SampleResume.pdf'}/></div>
       </div>
       <div className="profileImg">
-        <img src={Me} alt="" />
+        <img src='/images/me.jpg' alt="" />
       </div>
     </StyledHero>
   )

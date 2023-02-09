@@ -4,7 +4,9 @@ const GlobalStyle = createGlobalStyle`
     :root{
         --dark-navy: #020c1b;
         --navy: #0a192f;
+        /* --navy: #1d1e21; */
         --light-navy: #112240;
+        /* --light-navy: #2d2f33; */
         --lightest-navy: #233554;
         --navy-shadow: rgba(2,12,27,0.7);
         --dark-slate: #495670;
@@ -16,6 +18,10 @@ const GlobalStyle = createGlobalStyle`
         --green-tint: rgba(100,255,218,0.1);
         --pink: #f57dff;
         --blue: #57cbff;
+
+        --new-color: #25262a;
+        --light-new-color: #2d2f33;
+
         --font-sans: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
         /* --font-mono: "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace; */
         --font-mono: monospace;
@@ -28,8 +34,13 @@ const GlobalStyle = createGlobalStyle`
         scroll-behavior: smooth;
         font-family: var(--font-poppins);
     }
+    ::selection {
+        color: var(--lightest-slate);
+        background: var(--lightest-navy);
+    }
     body{
         background-color: var(--navy);
+        color: var(--slate);
     }
     body::-webkit-scrollbar {
         width: 7.5px;

@@ -5,6 +5,7 @@ import styled from 'styled-components'
 const StyledButton = styled.button`
   border: 1px solid var(--green);
   border-radius: 4px;
+  /* border-radius: 0px 20px 20px  20px; */
   color: var(--green);
   background-color: transparent;
   font-family: var(--font-mono);
@@ -12,15 +13,15 @@ const StyledButton = styled.button`
   margin-top: 40px;
   font-size: large;
   cursor: pointer;
+  transition: all 0.3s;
 
-  /* a{
-    text-decoration: none;
-    color: inherit;
-  } */
+  &:hover{
+    background-color: var(--green-tint);
+  }
 `;
 const Button = (props) => {
   return (
-      <a href={props.file} target="_blank" rel="noopener noreferrer">
+      <a href={props.link} target="_blank" rel="noopener noreferrer">
         <StyledButton>
           {props.value}
         </StyledButton>

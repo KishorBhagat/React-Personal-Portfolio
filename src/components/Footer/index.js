@@ -11,12 +11,12 @@ const StyledFooter = styled.footer`
     align-items: center;
     justify-content: center;
     .footer{
-      @media (width < 700px) {
+      @media (max-width: 700px) {
         display: none;
       }
     }
     .responsiveFooter{
-      @media (width >= 700px) {
+      @media (min-width: 700px) {
         display: none;
       }
     }
