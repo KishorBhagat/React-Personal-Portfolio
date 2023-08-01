@@ -108,7 +108,7 @@ const Hero = () => {
           <h3 className='heading'>A Student and</h3>
           <h3>a <span>Full Stack</span> Web Developer.</h3>
           <p>Zelous about software engineering having a handful of knowledge on web development. Primarily, looking for internships to upskill my existing skill set and gain some industrial work experience.</p>
-          <div><Button value="View Resume" link={'/SampleResume.pdf'}/></div>
+          <div><Button value="View Resume" link={'/Resume.pdf'}/></div>
       </div>
       <div className="profileImg">
         <img src='/images/me.jpg' alt="" />

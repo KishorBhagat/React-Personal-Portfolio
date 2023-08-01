@@ -19,6 +19,15 @@ const GlobalStyle = createGlobalStyle`
         --pink: #f57dff;
         --blue: #57cbff;
 
+        
+        
+        /* --green: #00abf0;
+        --navy: #081b29; */
+        /* --blue-theme: #00abf0;
+        --blue-bg: #081b29;
+        --blue-second-bg: #112e42;
+        --blue-theme-text: #ededee; */
+
         --new-color: #25262a;
         --light-new-color: #2d2f33;
 

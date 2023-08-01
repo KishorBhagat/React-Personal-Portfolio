@@ -14,7 +14,7 @@ const StyledSocialLinks = styled.ul`
 
     li{
         list-style: none;
-        margin: 0 10px;
+        margin-left: 20px;
     }
     a{
         text-decoration: none;

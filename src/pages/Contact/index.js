@@ -1,5 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import ContactForm from '../../components/ContactForm';
+import IconPhone from '../../components/icons/phone';
+import IconEnvelop from '../../components/icons/envelop';
+import IconLocation from '../../components/icons/location';
 
 const StyledContact = styled.section`
   /* background-color: green; */
@@ -26,6 +30,68 @@ const StyledContact = styled.section`
       background-color: var(--lightest-navy);
     }
   }
+  .inner{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* position: relative; */
+    .note{
+      /* position: absolute; */
+      /* background-color: red; */
+      width: calc(50%);
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      .box{
+        height: fit-content;
+        width: 100%;
+        background-color: var(--light-navy);
+        padding: 40px 30px;
+        border-radius: 4px;
+        position: absolute;
+        right: calc(0%);
+        z-index: 1;
+        /* text-align: left; */
+        h3{
+          font-family: var(--font-mono);
+          font-size: 16px;
+          color: var(--green);
+          margin-bottom: 20px;
+        }
+        span{
+          font-family: var(--font-mono);
+          font-size: 16px;
+          color: var(--green);
+          margin-top: 20px;
+          display: block;
+        }
+        .contact-details{
+          color: var(--light-slate);
+          font-size: 14px;
+          display: flex;
+          flex-direction: column;
+          span{
+            color: var(--light-slate);
+            display: flex;
+            align-items: center;
+            svg{
+              stroke: var(--light-slate);
+              margin-right: 15px;
+            }
+          }
+        }
+      }
+    }
+    .contact{
+      /* background-color: pink; */
+      display: flex;
+      align-items: center;
+      position: relative;
+      width: calc(50%);
+      height: 60vh;
+    }
+  }
 
   @media (max-width: 700px) {
     /* padding: 0; */
@@ -36,7 +102,28 @@ const StyledContact = styled.section`
     }
     .heading {
       .left-divider, .right-divider{
-        width: 50px;
+        width: 44px;
+      }
+    }
+    .inner{
+      flex-direction: column;
+      gap: 60px;
+      .note{
+        align-items: start;
+        width: 100%;
+        height: fit-content;
+        position: static;
+      .box{
+          position: static;
+          padding: 0;
+          background-color: transparent;
+        }
+      }
+      .contact{
+        width: 100%;
+        height: fit-content;
+        position: static;
+        margin-bottom: 80px;
       }
     }
   }
@@ -45,8 +132,27 @@ const Contact = () => {
   return (
     <StyledContact id='contact'>
       <div className="heading">
-        <div className='left-divider'></div><h1>Contact <span>Me</span></h1><div className="right-divider"></div>
-      </div> 
+        <div className='left-divider'></div><h1>Get In <span>Touch</span></h1><div className="right-divider"></div>
+      </div>
+      <div className="inner">
+        <div className="note">
+          <div className="box">
+            <h3>Hey!</h3>
+            <p>
+              If you are interested in collaborating or wish to get in touch, please don't hesitate to reach out to me. I would be delighted to explore potential projects or discuss any ideas you may have.
+            </p>
+            <span>Lets Connect!</span>
+            <div className='contact-details'>
+              <span><IconEnvelop /> kishorebhagat663@gmail.com</span>
+              <span><IconPhone /> +91 8658134190</span>
+              <span><IconLocation /> Burla, Odisha, India</span>
+            </div>
+          </div>
+        </div>
+        <div className='contact'>
+          <ContactForm />
+        </div>
+      </div>
     </StyledContact>
   )
 }

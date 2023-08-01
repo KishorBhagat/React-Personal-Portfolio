@@ -1,6 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 import Skill from '../../components/Skill';
+import IconNodejs from '../../components/icons/nodejs';
+import IconHtml5 from '../../components/icons/html5';
+import IconJavascript from '../../components/icons/javascript';
+import IconCss from '../../components/icons/css';
+import IconReact from '../../components/icons/react';
+import IconMongoDB from '../../components/icons/mongoDB';
+import IconExpress from '../../components/icons/express';
+import IconNextJS from '../../components/icons/nextjs';
+import IconJava from '../../components/icons/java';
+import IconPython from '../../components/icons/python';
 
 const StyledSkills = styled.section`
   /* background-color: blue; */
@@ -44,6 +54,9 @@ const StyledSkills = styled.section`
   .technologies{
     display: flex;
     justify-content: space-around;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
     /* flex-grow: 1;
     flex-shrink: 1; */
     /* .col-1{
@@ -59,7 +72,8 @@ const StyledSkills = styled.section`
       box-shadow: 0 10px 30px -15px var(--navy-shadow);
     } */
     @media (max-width: 700px){
-      flex-direction: column;
+      /* flex-direction: column; */
+
     }
   }
 `;
@@ -69,7 +83,7 @@ const Skills = () => {
       <div className="heading">
         <div className='left-divider'></div><h1><span>My</span> Skills</h1><div className="right-divider"></div>
       </div>
-      <div className="technologies">
+      {/* <div className="technologies">
         <div className="col-1">
           <Skill name={"Javascript"} progress={70}/>
           <Skill name={"HTML"} progress={80}/>
@@ -84,6 +98,18 @@ const Skills = () => {
           <Skill name={"Java"} progress={60}/>
           <Skill name={"Python"} progress={30}/>
         </div>      
+      </div> */}
+      <div className="technologies">
+        <Skill name={"Node.js"} icon={<IconNodejs />}/>
+        <Skill name={"React"} icon={<IconReact />}/>
+        <Skill name={"Html"} icon={<IconHtml5 />}/>
+        <Skill name={"CSS"} icon={<IconCss />}/>
+        <Skill name={"Javascript"} icon={<IconJavascript />}/>
+        <Skill name={"MongoDB"} icon={<IconMongoDB />}/>
+        <Skill name={"Express"} icon={<IconExpress />}/>
+        <Skill name={"Next"} icon={<IconNextJS />}/>
+        <Skill name={"Java"} icon={<IconJava />}/>
+        <Skill name={"Python"} icon={<IconPython />}/>
       </div>
     </StyledSkills>
   )
