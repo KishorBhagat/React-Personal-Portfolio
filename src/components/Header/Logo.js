@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const StyledLogo = styled.div`
     color: var(--green);
     font-size: 20px;
-    padding: 0 4px;
+    /* padding: 0 4px; */
     /* border: 2px solid var(--green); */
     font-weight: 600;
     font-size: 26px;
