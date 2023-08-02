@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+import emailjs from '@emailjs/browser';
+import IconSpinner from '../components/icons/spinner'
 
 const StyledContactForm = styled.div`
     background-color: #163545;
@@ -56,7 +58,7 @@ const StyledContactForm = styled.div`
             }
         }
         button{
-            width: fit-content;
+            width: 80px;
             border: 1px solid var(--green);
             border-radius: 4px;
             color: var(--green);
@@ -67,7 +69,8 @@ const StyledContactForm = styled.div`
             font-size: large;
             cursor: pointer;
             transition: all 0.3s;
-
+            display: flex;
+            justify-content: center;
             &:hover{
               background-color: var(--green-tint);
             }
@@ -83,17 +86,74 @@ const StyledContactForm = styled.div`
 `;
 
 const ContactForm = () => {
-  return (
-    <StyledContactForm>
-        <h1>Contact Me!</h1>
-        <form action="">
-            <input type="text" name="name" placeholder="Your Name"/>
-            <input type="email" name="email" placeholder="Your Email"/>
-            <textarea name="message" placeholder="Your Message"></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </StyledContactForm>
-  )
+
+    const initialFormData = {
+        name: "",
+        email: "",
+        message: ""
+    }
+
+    const [formData, setFormData] = useState(initialFormData);
+    const [loading, setLoading] = useState(false);
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value
+        }))
+    }
+
+    const EMAILJS_SERVICE_ID = "service_7wi1kq6";
+    const EMAILJS_TEMPLATE_ID = "template_d81cqjo";
+    const EMAILJS_PUBLIC_KEY = "41o-HMEFC3EPZ5ON4";
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        try {
+            const result = await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, e.target, EMAILJS_PUBLIC_KEY);
+            console.log('Email sent successfully!', result.text);
+            setFormData(initialFormData);
+            setLoading(false);
+        } catch (error) {
+            console.error('Error sending email:', error);
+            // alert('Failed to send email. Please try again later.');
+        }
+    }
+    return (
+        <StyledContactForm>
+            <h1>Contact Me!</h1>
+            <form action="" onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    onChange={handleChange}
+                    value={formData.name}
+                    required
+                />
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email"
+                    onChange={handleChange}
+                    value={formData.email}
+                    required
+                />
+                <textarea
+                    name="message"
+                    placeholder="Your Message"
+                    onChange={handleChange}
+                    value={formData.message}
+                    required
+                />
+                {
+                    loading ? <button type='button'><IconSpinner /></button> : <button type="submit">Send</button>
+                }
+            </form>
+        </StyledContactForm>
+    )
 }
 
 export default ContactForm
