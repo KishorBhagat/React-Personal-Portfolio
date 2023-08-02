@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Button from '../../components/Button';
+import LinkButton from '../../components/LinkButton';
 
 
 const StyledHero = styled.section`
@@ -61,6 +61,51 @@ const StyledHero = styled.section`
     }
   } 
 
+  @media (max-width: 1400px) and (min-width: 1200px){
+    .heroText{
+      h2{
+        font-size: 65px;
+      }
+      h3{
+        font-size: 45px;
+      }
+    }
+    .profileImg {
+      img{
+        height: 380px;
+      }
+    }
+  }
+
+  @media (max-width: 1200px) and (min-width: 700px){
+    /* padding: 100px 70px; */
+    /* background-color: red; */
+    .heroText{
+      flex-basis: 100%;
+      /* h2{
+        font-size: 60px;
+      }
+      h3{
+        font-size: 50px;
+      } */
+    }
+    .profileImg {
+      display: none;
+    }
+  }
+
+  @media (max-width: 1000px) and (min-width: 900px){
+    .heroText{
+      flex-basis: 100%;
+      /* h2{
+        font-size: 50px;
+      }
+      h3{
+        font-size: 45px;
+      } */
+    }
+  }
+
   @media (max-width: 700px){
     flex-direction: column-reverse;
     /* align-items: center; */
@@ -82,7 +127,6 @@ const StyledHero = styled.section`
       }
     }
     .profileImg {
-      /* display: none; */
       margin: 30px 0;
       img{
         height: 320px;
@@ -108,7 +152,7 @@ const Hero = () => {
           <h3 className='heading'>A Student and</h3>
           <h3>a <span>Full Stack</span> Web Developer.</h3>
           <p>Zelous about software engineering having a handful of knowledge on web development. Primarily, looking for internships to upskill my existing skill set and gain some industrial work experience.</p>
-          <div><Button value="View Resume" link={'/Resume.pdf'}/></div>
+          <div><LinkButton value="View Resume" link={'/Resume.pdf'}/></div>
       </div>
       <div className="profileImg">
         <img src='/images/me.jpg' alt="" />

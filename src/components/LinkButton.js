@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 
-const StyledButton = styled.button`
+const StyledLinkButton = styled.button`
   border: 1px solid var(--green);
   border-radius: 4px;
   /* border-radius: 0px 20px 20px  20px; */
@@ -19,14 +19,14 @@ const StyledButton = styled.button`
     background-color: var(--green-tint);
   }
 `;
-const Button = (props) => {
+const LinkButton = (props) => {
   return (
       <a href={props.link} target="_blank" rel="noopener noreferrer">
-        <StyledButton>
+        <StyledLinkButton>
           {props.value}
-        </StyledButton>
+        </StyledLinkButton>
       </a>
   )
 }
 
-export default Button
+export default LinkButton

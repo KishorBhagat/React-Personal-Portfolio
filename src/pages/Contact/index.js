@@ -75,9 +75,15 @@ const StyledContact = styled.section`
             color: var(--light-slate);
             display: flex;
             align-items: center;
+            font-size: 14px;
             svg{
               stroke: var(--light-slate);
               margin-right: 15px;
+            }
+            a{
+              font-size: 14px;
+              color: inherit;
+              text-decoration: none;
             }
           }
         }
@@ -143,8 +149,8 @@ const Contact = () => {
             </p>
             <span>Lets Connect!</span>
             <div className='contact-details'>
-              <span><IconEnvelop /> kishorebhagat663@gmail.com</span>
-              <span><IconPhone /> +91 8658134190</span>
+              <span><IconEnvelop /> <a href='mailto:kishorebhagat663@gmail.com' target='_blank' rel="noreferrer">kishorebhagat663@gmail.com</a></span>
+              <span><IconPhone /> <a href='tel:+91 8658134190'>+91 8658134190</a></span>
               <span><IconLocation /> Burla, Odisha, India</span>
             </div>
           </div>

@@ -5,12 +5,15 @@ import IconNodejs from '../../components/icons/nodejs';
 import IconHtml5 from '../../components/icons/html5';
 import IconJavascript from '../../components/icons/javascript';
 import IconCss from '../../components/icons/css';
+import IconC from '../../components/icons/c';
 import IconReact from '../../components/icons/react';
 import IconMongoDB from '../../components/icons/mongoDB';
 import IconExpress from '../../components/icons/express';
 import IconNextJS from '../../components/icons/nextjs';
 import IconJava from '../../components/icons/java';
 import IconPython from '../../components/icons/python';
+import IconMySql from '../../components/icons/mysql';
+import IconPostegreSql from '../../components/icons/postegresql';
 
 const StyledSkills = styled.section`
   /* background-color: blue; */
@@ -57,23 +60,9 @@ const StyledSkills = styled.section`
     justify-content: center;
     flex-wrap: wrap;
     gap: 30px;
-    /* flex-grow: 1;
-    flex-shrink: 1; */
-    /* .col-1{
-      padding: 0 20px;
-      background-color: var(--light-navy);
-      border-radius: 4px;
-      box-shadow: 0 10px 30px -15px var(--navy-shadow);
-    }
-    .col-2{
-      padding: 0 20px;
-      background-color: var(--light-navy);
-      border-radius: 4px;
-      box-shadow: 0 10px 30px -15px var(--navy-shadow);
-    } */
+
     @media (max-width: 700px){
       /* flex-direction: column; */
-
     }
   }
 `;
@@ -83,22 +72,6 @@ const Skills = () => {
       <div className="heading">
         <div className='left-divider'></div><h1><span>My</span> Skills</h1><div className="right-divider"></div>
       </div>
-      {/* <div className="technologies">
-        <div className="col-1">
-          <Skill name={"Javascript"} progress={70}/>
-          <Skill name={"HTML"} progress={80}/>
-          <Skill name={"CSS"} progress={60}/>
-          <Skill name={"React.js"} progress={50}/>
-          <Skill name={"Node.js"} progress={50}/>
-        </div>
-        <div className="col-2">
-          <Skill name={"Express.js"} progress={50}/>
-          <Skill name={"MongoDB"} progress={30}/>
-          <Skill name={"C/C++"} progress={80}/>
-          <Skill name={"Java"} progress={60}/>
-          <Skill name={"Python"} progress={30}/>
-        </div>      
-      </div> */}
       <div className="technologies">
         <Skill name={"Node.js"} icon={<IconNodejs />}/>
         <Skill name={"React"} icon={<IconReact />}/>
@@ -110,6 +83,9 @@ const Skills = () => {
         <Skill name={"Next"} icon={<IconNextJS />}/>
         <Skill name={"Java"} icon={<IconJava />}/>
         <Skill name={"Python"} icon={<IconPython />}/>
+        {/* <Skill name={"C"} icon={<IconC />}/>
+        <Skill name={"MySQL"} icon={<IconMySql />}/>
+        <Skill name={"PostgreSQL"} icon={<IconPostegreSql />}/> */}
       </div>
     </StyledSkills>
   )

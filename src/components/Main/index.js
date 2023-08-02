@@ -10,7 +10,13 @@ import Skills from '../../pages/Skills/index.js'
 const StyledMain = styled.main`
     padding: 0 150px;
     
-    @media (min-width: 400px) and (max-width: 700px){
+    @media (min-width: 992px) and (max-width: 1200px){
+      padding: 0 80px;
+    }
+    @media (min-width: 768px) and (max-width: 992px){
+      padding: 0 100px;
+    }
+    @media (min-width: 400px) and (max-width: 768px){
       padding: 0 50px;
     }
     @media (max-width: 400px){

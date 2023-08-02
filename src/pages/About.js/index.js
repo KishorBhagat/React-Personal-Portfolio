@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const StyledAbout = styled.section`
   /* background-color: green; */
   min-height: 100vh;
-  padding: 100px 0px;
+  padding: 100px 40px;
   h1{
     font-size: 30px;
     /* font-weight: large; */
@@ -29,21 +29,70 @@ const StyledAbout = styled.section`
 
   .inner{
     display: flex;
-    /* align-items: center; */
-    justify-content: space-around;
+    justify-content: center;
+    gap: 70px;
     flex-grow: 1;
     flex-shrink: 1;
     .aboutPic {
+      /* background-color: red; */
+      flex-basis: 30%;
       img{
-        height: 350px;
-        width: 350px;
-        flex-basis: 40%;
-        border-radius: 2px;
+        /* height: 350px; */
+        /* width: 350px; */
+        width: 100%;
+        aspect-ratio: 1;
+        border-radius: 4px;
         box-shadow: rgba(100, 255, 218, 0.55) 0 0 25px;
       }
     }  
     .aboutText{
-      flex-basis: 60%;
+      /* background-color: green; */
+      flex-basis: 70%;
+      flex-grow: 1;
+    }
+  }
+
+  @media (min-width: 700px) and (max-width: 1200px) {
+    padding: 100px 0px;
+    /* .inner{
+      gap: 50px;
+      .aboutPic{
+        img{
+          height: 300px;
+        }
+      }
+      .aboutText{
+
+      }
+    } */
+  }
+  @media (min-width: 900px) and (max-width: 1200px) {
+    padding: 100px 0px;
+    /* .inner{
+      gap: 50px;
+      .aboutPic{
+        img{
+          height: 300px;
+        }
+      }
+      .aboutText{
+
+      }
+    } */
+  }
+  @media (min-width: 700px) and (max-width: 900px) {
+    /* padding: 100px 0px; */
+    .inner{
+      gap: 50px;
+      .aboutPic{
+        flex-basis: 40%;
+        /* img{
+          height: 300px;
+        } */
+      }
+      .aboutText{
+        flex-basis: 60%;
+      }
     }
   }
   
@@ -60,13 +109,15 @@ const StyledAbout = styled.section`
     }
     .inner{
       flex-direction: column-reverse;
+      gap: 0;
       .aboutPic{
         display: flex;
         justify-content: center;
         margin-top: 50px;
         img{
           box-shadow: rgba(100, 255, 218, 0.55) 0 0 25px;
-          height: 250px;
+          /* height: 250px; */
+          width: 250px;
         }
       }
     }
