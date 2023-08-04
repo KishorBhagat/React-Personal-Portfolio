@@ -7,6 +7,7 @@ const StyledAbout = styled.section`
   padding: 100px 40px;
   h1{
     font-size: 30px;
+    white-space: nowrap;
     /* font-weight: large; */
     color: var(--lightest-slate);
     span{

@@ -13,6 +13,7 @@ const StyledProjects = styled.section`
     margin-bottom: 50px;
     h1{
       font-size: 30px;
+      white-space: nowrap;
       /* font-weight: large; */
       color: var(--lightest-slate);
   

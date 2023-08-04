@@ -11,6 +11,7 @@ const StyledContact = styled.section`
   padding: 100px 0px;
   h1{
     font-size: 30px;
+    white-space: nowrap;
     /* font-weight: large; */
     color: var(--lightest-slate);
     span{
@@ -34,10 +35,8 @@ const StyledContact = styled.section`
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    /* position: relative; */
+    height: 465px;
     .note{
-      /* position: absolute; */
-      /* background-color: red; */
       width: calc(50%);
       height: 60vh;
       display: flex;
@@ -52,7 +51,6 @@ const StyledContact = styled.section`
         position: absolute;
         right: calc(0%);
         z-index: 1;
-        /* text-align: left; */
         h3{
           font-family: var(--font-mono);
           font-size: 16px;
@@ -90,7 +88,6 @@ const StyledContact = styled.section`
       }
     }
     .contact{
-      /* background-color: pink; */
       display: flex;
       align-items: center;
       position: relative;
@@ -114,6 +111,7 @@ const StyledContact = styled.section`
     .inner{
       flex-direction: column;
       gap: 60px;
+      height: fit-content;
       .note{
         align-items: start;
         width: 100%;
